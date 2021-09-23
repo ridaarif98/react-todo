@@ -80,7 +80,7 @@ class TodoContainer extends React.Component {
       addTodoItem,
       delTodo,
       handleChange,
-      setUpdate
+      setUpdate,
     } = this;
     return (
       <div className="container">
