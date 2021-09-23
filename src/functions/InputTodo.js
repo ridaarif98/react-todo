@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const InputTodo = (props) => {
   const [inputText, setInputText] = useState({
@@ -36,4 +37,9 @@ const InputTodo = (props) => {
     </form>
   );
 };
+
+InputTodo.propTypes = {
+  addTodoProps: PropTypes.func.isRequired,  
+};
+
 export default InputTodo;

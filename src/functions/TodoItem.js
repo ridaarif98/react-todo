@@ -1,14 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 function TodoItem(props) {
   const [editing, setEditing] = useState(false);
-
-  useEffect(() => {
-    return () => {
-      console.log('Cleaning up...');
-    };
-  }, []);
 
   const handleEditing = () => {
     setEditing(true);
@@ -46,7 +40,7 @@ function TodoItem(props) {
           checked={completed}
           onChange={() => handleChangeProps(id)}
         />
-        <button onClick={() => deleteTodoProps(id)}>Delete</button>
+        <button onClick={() => deleteTodoProps(id)} type="button">Delete</button>
         <span className={completed ? 'completedStyle' : null}>{title}</span>
       </div>
       <input
