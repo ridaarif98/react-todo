@@ -39,7 +39,7 @@ const InputTodo = (props) => {
 };
 
 InputTodo.propTypes = {
-  addTodoProps: PropTypes.func.isRequired,  
+  addTodoProps: PropTypes.func.isRequired,
 };
 
 export default InputTodo;
