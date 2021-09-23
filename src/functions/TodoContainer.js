@@ -31,11 +31,7 @@ class TodoContainer extends React.Component {
   delTodo = (id) => {
     const { todos } = this.state;
     this.setState({
-      todos: [
-        ...todos.filter((todo) => {
-          return todo.id !== id;
-        }),
-      ],
+      todos: [...todos.filter((todo) => todo.id !== id)],
     });
   };
 
@@ -43,7 +39,7 @@ class TodoContainer extends React.Component {
     const { todos } = this.state;
     const newTodo = {
       id: uuidv4(),
-      title: title,
+      title,
       completed: false,
     };
     this.setState({
@@ -52,19 +48,17 @@ class TodoContainer extends React.Component {
   };
 
   handleChange = (id) => {
-    this.setState((prevState) => {
-      return {
-        todos: prevState.todos.map((todo) => {
-          if (todo.id === id) {
-            return {
-              ...todo,
-              completed: !todo.completed,
-            };
-          }
-          return todo;
-        }),
-      };
-    });
+    this.setState((prevState) => ({
+      todos: prevState.todos.map((todo) => {
+        if (todo.id === id) {
+          return {
+            ...todo,
+            completed: !todo.completed,
+          };
+        }
+        return todo;
+      }),
+    }));
   };
 
   setUpdate = (updatedTitle, id) => {
