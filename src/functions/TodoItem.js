@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
-const TodoItem = (props) => {
+function TodoItem(props) {
   const [editing, setEditing] = useState(false);
 
   useEffect(() => {
@@ -19,7 +20,13 @@ const TodoItem = (props) => {
     }
   };
 
-  const { completed, id, title } = props.todo;
+  const {
+    todo,
+    handleChangeProps,
+    deleteTodoProps,
+    setUpdate,
+  } = props;
+  const { completed, id, title } = todo;
 
   const viewMode = {};
   const editMode = {};
@@ -37,9 +44,9 @@ const TodoItem = (props) => {
           type="checkbox"
           className="checkbox"
           checked={completed}
-          onChange={() => props.handleChangeProps(id)}
+          onChange={() => handleChangeProps(id)}
         />
-        <button onClick={() => props.deleteTodoProps(id)}>Delete</button>
+        <button onClick={() => deleteTodoProps(id)}>Delete</button>
         <span className={completed ? 'completedStyle' : null}>{title}</span>
       </div>
       <input
@@ -48,12 +55,19 @@ const TodoItem = (props) => {
         style={editMode}
         value={title}
         onChange={(e) => {
-          props.setUpdate(e.target.value, id);
+          setUpdate(e.target.value, id);
         }}
         onKeyDown={handleUpdatedDone}
       />
     </li>
   );
+}
+
+TodoItem.propTypes = {
+  todo: PropTypes.instanceOf(Object).isRequired,
+  handleChangeProps: PropTypes.func.isRequired,
+  deleteTodoProps: PropTypes.func.isRequired,
+  setUpdate: PropTypes.func.isRequired,
 };
 
 export default TodoItem;

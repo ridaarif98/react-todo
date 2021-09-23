@@ -19,8 +19,6 @@ const InputTodo = (props) => {
       setInputText({
         title: '',
       });
-    } else {
-      alert('Please write item');
     }
   };
 
@@ -34,7 +32,7 @@ const InputTodo = (props) => {
         name="title"
         onChange={onChange}
       />
-      <button className="input-submit">Submit</button>
+      <button className="input-submit" type="button">Submit</button>
     </form>
   );
 };
