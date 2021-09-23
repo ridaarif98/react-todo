@@ -7,10 +7,10 @@ const TodosList = (props) => {
     todos,
     handleChangeProps,
     deleteTodoProps,
-    setUpdate
+    setUpdate,
   } = props;
 
-  return(
+  return (
     <ul>
       {todos.map((todo) => (
         <TodoItem
@@ -26,7 +26,7 @@ const TodosList = (props) => {
 };
 
 TodosList.propTypes = {
-  todo: PropTypes.instanceOf(Array).isRequired,
+  todos: PropTypes.instanceOf(Array).isRequired,
   handleChangeProps: PropTypes.func.isRequired,
   deleteTodoProps: PropTypes.func.isRequired,
   setUpdate: PropTypes.func.isRequired,
