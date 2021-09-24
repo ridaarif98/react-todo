@@ -12,7 +12,7 @@
 
   [Live Demo](https://ridaarif98.github.io/react-todo/)
 
-# Built with
+## Built with
 
 **React**
 
