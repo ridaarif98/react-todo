@@ -8,6 +8,10 @@
 - Mark a task as completed
 - Save all tasks in local storage
 
+## Live 
+
+  [Live Demo](https://ridaarif98.github.io/react-todo/)
+
 # Built with
 
 **React**
